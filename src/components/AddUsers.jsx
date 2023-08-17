@@ -13,12 +13,16 @@ function AddUsers() {
       const obj = {
         name,
         surname,
-        cardnum,
-        uniqueid
+        cardnum:Number(cardnum),
+        uniqueid:Number(uniqueid)
       }
-      const response = await axios.post('http://192.168.100.116:3000/addpost',obj );
+      const response = await axios.post('http://192.168.0.103:4000/addpost',obj );
       console.log(obj);
       console.log(response);
+      setName('')
+      setSurname('')
+      setCard('')
+      setUniqueId('')
     } catch (error) {
       console.log(error.response.data.errors);
       setErr(error.response.data.errors);

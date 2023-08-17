@@ -11,6 +11,7 @@ function HomePage() {
 <button > <Link to='/userpay'> User Pay</Link>   </button>
 <button > <Link to='/userlist'> User List </Link>   </button>
 <button > <Link to='/userpaylist'> User Pay List </Link>   </button>
+ <Link to='/edit'></Link> 
 </div>
  
     </div>
