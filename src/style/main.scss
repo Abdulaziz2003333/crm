@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'poppins_regular';
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'poppins_bold';
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'poppins_light';
+    src: url(../fonts/Poppins-Light.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+@import './homepage.scss';
+@import './footer.scss';
+

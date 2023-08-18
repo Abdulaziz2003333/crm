@@ -16,7 +16,7 @@ function AddUsers() {
         cardnum:Number(cardnum),
         uniqueid:Number(uniqueid)
       }
-      const response = await axios.post('http://192.168.0.103:4000/addpost',obj );
+      const response = await axios.post('http://192.168.100.211:4040/addpost',obj );
       console.log(obj);
       console.log(response);
       setName('')

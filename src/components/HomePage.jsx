@@ -1,20 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import '../style/main.css'
+import logo from '../images/crm-crm-svgrepo-com (1).svg'
 function HomePage() {
   return (
-    <div>HomePage
-
-
-<div className='navigateLink'> 
-<button > <Link to='/adduser'> Add User</Link>   </button>
-<button > <Link to='/userpay'> User Pay</Link>   </button>
-<button > <Link to='/userlist'> User List </Link>   </button>
-<button > <Link to='/userpaylist'> User Pay List </Link>   </button>
- <Link to='/edit'></Link> 
-</div>
- 
-    </div>
+    <header>
+      <nav>
+     <div className="container">
+      <div className="navigation">
+        <img src={logo} alt="logo" className='header_logo'/>
+        <div className='navigation_right'>
+        <ul className="navigation_link">
+         <li> <Link to='/adduser'>add user</Link></li>
+          <li><Link to='/userlist'>user list</Link></li>
+          <li><Link to='/userpay'>user pay</Link></li>
+          <li><Link to='/userpaylist'>user paylist</Link></li>
+        </ul>
+        <div>
+          <button>Register</button>
+        </div>
+        </div>
+      </div>
+      </div> 
+      </nav> 
+    </header>
   )
 }
 

@@ -12,7 +12,7 @@ const [shouldNavigate, setShouldNavigate] = useState(false);
 const {id} = useParams();
 async function fetched(id) {
     try {
-        const response = await axios.get(`http://192.168.0.103:4000/edit/${id}`);
+        const response = await axios.get(`http://192.168.100.211:4040/edit/${id}`);
         const data = response.data.data;
         setName(data.name)
         setSurname(data.surname)
@@ -32,7 +32,7 @@ async function fetched(id) {
                     cardnum,
                     uniqueid
                   }
-               const response= await axios.put(`http://192.168.0.103:4000/edit/${id}`,obj) 
+               const response= await axios.put(`http://192.168.100.211:4040/edit/${id}`,obj) 
                setEdit(response);
                if(response.status === 201){
                 setShouldNavigate(true);

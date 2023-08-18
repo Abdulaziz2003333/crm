@@ -8,7 +8,7 @@ const [users, setUsers] = useState([]);
 const [userId, setID] = useState([]);
 const fetchData= async ()=>{
 try{
-const response= await axios.get('http://192.168.0.103:4000/addpost');
+const response= await axios.get('http://192.168.100.211:4040/addpost');
 setUsers(response.data)
 }
 catch(error){
@@ -42,7 +42,7 @@ const filteredUsers = users?.data?.filter(user => {
 const handleSubmit=async (e)=>{
 e.preventDefault()
 try {
-  const resData= await axios.put('http://192.168.0.103:4000/pay',{id:Number(userId),money:Number(pay) })
+  const resData= await axios.put('http://192.168.100.211:4040/pay',{id:Number(userId),money:Number(pay) })
   console.log(resData);
 } catch (error) {
  console.log(error); 
