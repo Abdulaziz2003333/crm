@@ -14,7 +14,7 @@ function UserPayList()
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://192.168.100.211:4040/addpost');
+      const response = await axios.get('http://192.168.1.27:4478/addpost');
       setUsers(response.data);
       console.log(response.data);
     } catch (error) {

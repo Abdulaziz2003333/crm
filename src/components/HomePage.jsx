@@ -1,29 +1,64 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import '../style/main.css'
-import logo from '../images/crm-crm-svgrepo-com (1).svg'
+
+import axios from 'axios';
+
+
+
+
+
+
 function HomePage() {
+
+const [user,setUsers]=useState([])
+const [totalCount, setTotalCount] = useState(0);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://192.168.1.27:4478/addpost');
+      setUsers(response.data);
+      const data= response.data
+      const count = data.length;
+      setTotalCount(count);
+      console.log(totalCount);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(()=>{
+    fetchData()
+  },[])
+
   return (
-    <header>
-      <nav>
-     <div className="container">
-      <div className="navigation">
-        <img src={logo} alt="logo" className='header_logo'/>
-        <div className='navigation_right'>
-        <ul className="navigation_link">
-         <li> <Link to='/adduser'>add user</Link></li>
-          <li><Link to='/userlist'>user list</Link></li>
-          <li><Link to='/userpay'>user pay</Link></li>
-          <li><Link to='/userpaylist'>user paylist</Link></li>
-        </ul>
-        <div>
-          <button>Register</button>
-        </div>
-        </div>
-      </div>
-      </div> 
-      </nav> 
-    </header>
+  <div>
+    <h1>Home Page </h1>
+    <table>
+       <thead>
+        <tr>
+          <th>Full Name </th>
+  
+          <th>Unique ID</th>
+          <th>cardnumber</th>
+         
+        </tr>
+       </thead>
+       <tbody>
+       {
+  user?.data?.map((i)=>(
+    <tr key={i.id}>
+     <td>{i.name}  {i.surname} </td>
+    
+     <td>{i.uniqueid}</td>
+     <td>{i.cardnum}</td>
+    
+    </tr>
+  ))
+}
+       </tbody>
+      </table>
+<h3>{totalCount} aloooo</h3>
+
+    </div>
   )
 }
 

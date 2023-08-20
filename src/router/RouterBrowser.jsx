@@ -6,18 +6,20 @@ import UserList from '../components/UserList';
 import UserPay from '../components/UserPay';
 import UserPayList from '../components/UserPayList';
 import Edit from '../components/Edit';
+import Header from '../components/Header';
 function RouterBrowser() {
   return (
     <>
       <BrowserRouter>
-      <HomePage/>
+      <Header/>
      <Routes>
-  
+  <Route path='/home' Component={HomePage} />
       <Route path='/adduser' Component={AddUsers}/>
       <Route path='/userlist' Component={UserList}/>
       <Route path='/userpay' Component={UserPay}/>
       <Route path='/userpaylist' Component={UserPayList}/>
     <Route path='/edit/:id'  Component={Edit}/>
+   
      </Routes>
       
       </BrowserRouter>
