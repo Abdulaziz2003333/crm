@@ -16,15 +16,13 @@ const [totalCount, setTotalCount] = useState(0);
     try {
       const response = await axios.get('http://192.168.1.27:4478/addpost');
       setUsers(response.data);
-      const data= response.data
-      const count = data.length;
-      setTotalCount(count);
-      console.log(totalCount);
+      const data= response.data.data;
+      setTotalCount(data.length)
     } catch (error) {
       console.log(error);
     }
   };
-
+  const limit = user?.data?.slice(-3).reverse();
   useEffect(()=>{
     fetchData()
   },[])
@@ -32,6 +30,17 @@ const [totalCount, setTotalCount] = useState(0);
   return (
   <div>
     <h1>Home Page </h1>
+    {
+      limit?.map(i => (
+        <tr key={i.id}>
+        <td>{i.name}  {i.surname} </td>
+       
+        <td>{i.uniqueid}</td>
+        <td>{i.cardnum}</td>
+       
+       </tr>
+      ))
+    }
     <table>
        <thead>
         <tr>
@@ -54,6 +63,8 @@ const [totalCount, setTotalCount] = useState(0);
     </tr>
   ))
 }
+
+
        </tbody>
       </table>
 <h3>{totalCount} aloooo</h3>

@@ -33,10 +33,10 @@ function AddUsers() {
 
     <div>AddUsers
 <form onSubmit={handleSubmit}> 
-<input type="text" value={name} onChange={e => setName(e.target.value)} required/>
-<input type="text" value={surname} onChange={e => setSurname(e.target.value)} required/>
-<input type="number"value={cardnum} onChange={e => setCard(e.target.value)} required />
-<input type="number" value={uniqueid} onChange={e => setUniqueId(e.target.value)} required/>
+<input type="text" value={name} onChange={e => setName(e.target.value)} required placeholder='Name'/>
+<input type="text" value={surname} onChange={e => setSurname(e.target.value)} required placeholder='Surname'/>
+<input type="number"value={cardnum} onChange={e => setCard(e.target.value)} required placeholder='Card Nuber'/>
+<input type="number" value={uniqueid} onChange={e => setUniqueId(e.target.value)} required placeholder='Unique ID'/>
 
 <button type='submit'>Click</button>
 
